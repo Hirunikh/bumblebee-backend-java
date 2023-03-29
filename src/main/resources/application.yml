@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: "jdbc:sqlserver://localhost;databaseName=BumbleBee;encrypt=true;trustServerCertificate=true;"
+    username:  "dbuser"
+    password: "admin@1234"
+    driver-class-name: "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: "org.hibernate.dialect.SQLServer2012Dialect"
+    hibernate:
+      ddl-auto: update
