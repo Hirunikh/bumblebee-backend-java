@@ -1,4 +1,4 @@
-package com.hiruni.bumblebee;
+package com.hiruni.bumblebee.customers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -7,7 +7,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/V1/Customers")
-
 public class CustomersController {
 
     private  final CustomersService customersService;
@@ -24,6 +23,6 @@ public class CustomersController {
 
     @PostMapping
     public void CreateNewCustomer(@RequestBody Customers customers) {
-        CustomersService.addnewCustomer(customers);
+        customersService.addNewCustomer(customers);
     }
 }

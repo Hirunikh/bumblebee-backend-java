@@ -1,10 +1,9 @@
-package com.hiruni.bumblebee;
+package com.hiruni.bumblebee.customers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CustomersService {
@@ -16,8 +15,8 @@ public class CustomersService {
         this.customersRepository = customersRepository;
     }
 
-    public static void addnewCustomer(Customers customers) {
-        System.out.println(customers);
+    public void addNewCustomer(Customers customers) {
+        customersRepository.save(customers);
     }
 
 

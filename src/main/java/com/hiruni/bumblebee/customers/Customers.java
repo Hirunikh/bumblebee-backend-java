@@ -1,4 +1,4 @@
-package com.hiruni.bumblebee;
+package com.hiruni.bumblebee.customers;
 
 import lombok.NoArgsConstructor;
 
@@ -31,64 +31,64 @@ public class Customers {
     )
 
     @Column(
-            name = "CustomerID",
+            name = "customerID",
             updatable = false
     )
-    private Integer CustomerID;
+    private Integer customerID;
 
     @Column(
-            name = "CustomerName",
+            name = "customerName",
             nullable = false,
             columnDefinition = "TEXT"
     )
-    private String CustomerName;
+    private String customerName;
 
     @Column(
-            name = "DOB",
+            name = "dob",
             nullable = false,
             columnDefinition = "DATE"
     )
-    private Date DOB;
+    private Date dob;
 
     @Column(
-            name = "ContactNumber",
+            name = "contactNumber",
             nullable = false,
             columnDefinition = "TEXT"
     )
-    private  String ContactNumber;
+    private  String contactNumber;
 
     @Column(
-            name = "Email",
+            name = "email",
             nullable = false,
             columnDefinition = "TEXT"
     )
-    private String Email;
+    private String email;
 
     @Column(
-            name = "Address",
+            name = "address",
             nullable = false,
             columnDefinition = "TEXT"
     )
-    private String Address;
+    private String address;
 
     @Column(
-            name = "LoanBalance",
+            name = "loanBalance",
             nullable = false
     )
-    private Float LoanBalance;
+    private Float loanBalance;
 
     @Column(
-            name = "UsedAmount",
+            name = "usedAmount",
             nullable = false
     )
-    private Float UsedAmount;
+    private Float usedAmount;
 
     @Column(
-            name = "InstallmentPlan",
+            name = "installmentPlan",
             nullable = false,
             columnDefinition = "TEXT"
     )
-    private String InstallmentPlan;
+    private String installmentPlan;
 
     public Customers (Integer customerID,
                      String customerName,
@@ -100,101 +100,101 @@ public class Customers {
                      Float usedAmount,
                      String installmentPlan)
     {
-        CustomerID = customerID;
-        CustomerName = customerName;
+        this.customerID = customerID;
+        this.customerName = customerName;
         DOB = DOB;
-        ContactNumber = contactNumber;
-        Email = email;
-        Address = address;
-        LoanBalance = loanBalance;
-        UsedAmount = usedAmount;
-        InstallmentPlan = installmentPlan;
+        this.contactNumber = contactNumber;
+        this.email = email;
+        this.address = address;
+        this.loanBalance = loanBalance;
+        this.usedAmount = usedAmount;
+        this.installmentPlan = installmentPlan;
     }
 
     public Integer getCustomerID() {
-        return CustomerID;
+        return customerID;
     }
 
     public void setCustomerID(Integer customerID) {
-        CustomerID = customerID;
+        this.customerID = customerID;
     }
 
     public String getCustomerName() {
-        return CustomerName;
+        return customerName;
     }
 
     public void setCustomerName(String customerName) {
-        CustomerName = customerName;
+        this.customerName = customerName;
     }
 
-    public Date getDOB() {
-        return DOB;
+    public Date getDob() {
+        return dob;
     }
 
-    public void setDOB(Date DOB) {
-        this.DOB = DOB;
+    public void setDob(Date dob) {
+        this.dob = dob;
     }
 
     public String getContactNumber() {
-        return ContactNumber;
+        return contactNumber;
     }
 
     public void setContactNumber(String contactNumber) {
-        ContactNumber = contactNumber;
+        this.contactNumber = contactNumber;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
     public void setAddress(String address) {
-        Address = address;
+        this.address = address;
     }
 
     public Float getLoanBalance() {
-        return LoanBalance;
+        return loanBalance;
     }
 
     public void setLoanBalance(Float loanBalance) {
-        LoanBalance = loanBalance;
+        this.loanBalance = loanBalance;
     }
 
     public Float getUsedAmount() {
-        return UsedAmount;
+        return usedAmount;
     }
 
     public void setUsedAmount(Float usedAmount) {
-        UsedAmount = usedAmount;
+        this.usedAmount = usedAmount;
     }
 
     public String getInstallmentPlan() {
-        return InstallmentPlan;
+        return installmentPlan;
     }
 
     public void setInstallmentPlan(String installmentPlan) {
-        InstallmentPlan = installmentPlan;
+        this.installmentPlan = installmentPlan;
     }
 
     @Override
     public String toString() {
         return "Customers{" +
-                "CustomerID=" + CustomerID +
-                ", CustomerName='" + CustomerName + '\'' +
-                ", DOB=" + DOB +
-                ", ContactNumber='" + ContactNumber + '\'' +
-                ", Email='" + Email + '\'' +
-                ", Address='" + Address + '\'' +
-                ", LoanBalance=" + LoanBalance +
-                ", UsedAmount=" + UsedAmount +
-                ", InstallmentPlan='" + InstallmentPlan + '\'' +
+                "CustomerID=" + customerID +
+                ", CustomerName='" + customerName + '\'' +
+                ", DOB=" + dob +
+                ", ContactNumber='" + contactNumber + '\'' +
+                ", Email='" + email + '\'' +
+                ", Address='" + address + '\'' +
+                ", LoanBalance=" + loanBalance +
+                ", UsedAmount=" + usedAmount +
+                ", InstallmentPlan='" + installmentPlan + '\'' +
                 '}';
     }
 
