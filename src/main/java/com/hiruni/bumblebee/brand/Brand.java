@@ -1,4 +1,4 @@
-package com.hiruni.bumblebee.Brand;
+package com.hiruni.bumblebee.brand;
 
 import lombok.NoArgsConstructor;
 

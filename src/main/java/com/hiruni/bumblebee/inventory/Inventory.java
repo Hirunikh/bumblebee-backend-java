@@ -1,4 +1,4 @@
-package com.hiruni.bumblebee.Inventory;
+package com.hiruni.bumblebee.inventory;
 
 import lombok.NoArgsConstructor;
 

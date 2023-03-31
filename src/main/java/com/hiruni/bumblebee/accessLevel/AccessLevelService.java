@@ -1,7 +1,5 @@
-package com.hiruni.bumblebee.AccessLevel;
+package com.hiruni.bumblebee.accessLevel;
 
-import com.hiruni.bumblebee.Category.Category;
-import com.hiruni.bumblebee.Category.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

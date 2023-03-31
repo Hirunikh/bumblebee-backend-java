@@ -1,6 +1,5 @@
-package com.hiruni.bumblebee.AccessLevel;
+package com.hiruni.bumblebee.accessLevel;
 
-import com.hiruni.bumblebee.Category.Category;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

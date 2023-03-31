@@ -1,6 +1,5 @@
-package com.hiruni.bumblebee.Brand;
+package com.hiruni.bumblebee.brand;
 
-import com.hiruni.bumblebee.Brand.Brand;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

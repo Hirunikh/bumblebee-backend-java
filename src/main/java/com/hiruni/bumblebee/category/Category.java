@@ -1,4 +1,4 @@
-package com.hiruni.bumblebee.Category;
+package com.hiruni.bumblebee.category;
 
 import lombok.NoArgsConstructor;
 

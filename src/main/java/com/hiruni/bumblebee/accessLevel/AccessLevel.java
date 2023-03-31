@@ -1,4 +1,4 @@
-package com.hiruni.bumblebee.AccessLevel;
+package com.hiruni.bumblebee.accessLevel;
 
 import lombok.NoArgsConstructor;
 

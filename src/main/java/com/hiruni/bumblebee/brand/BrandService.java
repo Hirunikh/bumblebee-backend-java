@@ -1,7 +1,5 @@
-package com.hiruni.bumblebee.Brand;
+package com.hiruni.bumblebee.brand;
 
-import com.hiruni.bumblebee.Category.Category;
-import com.hiruni.bumblebee.Category.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

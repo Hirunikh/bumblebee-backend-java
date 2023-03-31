@@ -1,6 +1,5 @@
-package com.hiruni.bumblebee.Inventory;
+package com.hiruni.bumblebee.inventory;
 
-import com.hiruni.bumblebee.Category.Category;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
