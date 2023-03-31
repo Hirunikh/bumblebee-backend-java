@@ -56,18 +56,26 @@ public class Loan {
     )
     private LocalDate paymentDueDate;
 
+    @Column(
+            name = "customerID",
+            nullable = false,
+            columnDefinition = "Integer"
+    )
+    private Integer customerID;
 
     public Loan (Integer LoanID,
                 Float LoanAmount,
                 Float InterestRate,
                 String InstallmentPlan,
-                LocalDate PaymentDueDate)
+                LocalDate PaymentDueDate,
+                 Integer customerID )
     {
         this.loanID = LoanID;
         this.loanAmount = LoanAmount;
         this.interestRate = InterestRate;
         this.installmentPlan = InstallmentPlan;
-        paymentDueDate = PaymentDueDate;
+        this.paymentDueDate = PaymentDueDate;
+        this.customerID = customerID;
 
     }
 
@@ -111,6 +119,14 @@ public class Loan {
         this.paymentDueDate = paymentDueDate;
     }
 
+    public Integer getCustomerID() {
+        return customerID;
+    }
+
+    public void setCustomerID(Integer customerID) {
+        this.customerID = customerID;
+    }
+
     @Override
     public String toString() {
         return "Loan{" +
@@ -119,6 +135,7 @@ public class Loan {
                 ", interestRate=" + interestRate +
                 ", installmentPlan='" + installmentPlan + '\'' +
                 ", paymentDueDate=" + paymentDueDate +
+                "customerID=" + customerID +
                 '}';
     }
 }

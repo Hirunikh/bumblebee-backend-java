@@ -17,13 +17,28 @@ public class CategoryController {
     }
 
     @GetMapping
-    public List<Category> getCategory() {
+    public List<Category> getCategory()
+    {
         return categoryService.getCategory();
     }
 
     @PostMapping
-    public void CreateNewCategory(@RequestBody Category category) {
+    public void CreateNewCategory(@RequestBody Category category)
+    {
         categoryService.addNewCategory(category);
+    }
+
+    @DeleteMapping(path = "{CategoryID}")
+    public void deleteCategory (
+            @PathVariable ("CategoryID") Integer categoryID){
+        categoryService.deleteCategory(categoryID);
+    }
+
+    @PutMapping(path = "{CategoryID}")
+    public void updateCategory(
+            @PathVariable("CategoryID") Integer categoryID,
+            @RequestParam String categoryName){
+        categoryService.updateCategory(categoryID,categoryName);
     }
 }
 
