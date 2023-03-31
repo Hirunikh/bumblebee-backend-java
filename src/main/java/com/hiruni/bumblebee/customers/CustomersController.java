@@ -1,6 +1,8 @@
 package com.hiruni.bumblebee.customers;
 
+import com.hiruni.bumblebee.config.ApiError;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,6 +21,11 @@ public class CustomersController {
     @GetMapping
     public List<Customers> getCustomers() {
         return customersService.getCustomers();
+    }
+
+    @GetMapping("/test-error")
+    public void throwError() {
+        throw new ApiError("No customers found", HttpStatus.NOT_FOUND);
     }
 
     @PostMapping

@@ -48,7 +48,7 @@ public class Customers {
             nullable = false,
             columnDefinition = "DATE"
     )
-    private Date dob;
+    private LocalDate dob;
 
     @Column(
             name = "contactNumber",
@@ -75,13 +75,19 @@ public class Customers {
             name = "loanBalance",
             nullable = false
     )
-    private Float loanBalance;
+    private Double loanBalance;
 
     @Column(
             name = "usedAmount",
             nullable = false
     )
-    private Float usedAmount;
+    private Double usedAmount;
+
+    @Column(
+            name = "creditLimit",
+            nullable = false
+    )
+    private Double creditLimit;
 
     @Column(
             name = "installmentPlan",
@@ -96,19 +102,20 @@ public class Customers {
                      String contactNumber,
                      String email,
                      String address,
-                     Float loanBalance,
-                     Float usedAmount,
+                     Double loanBalance,
+                     Double usedAmount, Double creditLimit,
                      String installmentPlan)
     {
         this.customerID = customerID;
         this.customerName = customerName;
-        DOB = DOB;
+        this.dob = DOB;
         this.contactNumber = contactNumber;
         this.email = email;
         this.address = address;
         this.loanBalance = loanBalance;
         this.usedAmount = usedAmount;
         this.installmentPlan = installmentPlan;
+        this.creditLimit = creditLimit;
     }
 
     public Integer getCustomerID() {
@@ -127,11 +134,11 @@ public class Customers {
         this.customerName = customerName;
     }
 
-    public Date getDob() {
+    public LocalDate getDob() {
         return dob;
     }
 
-    public void setDob(Date dob) {
+    public void setDob(LocalDate dob) {
         this.dob = dob;
     }
 
@@ -159,19 +166,19 @@ public class Customers {
         this.address = address;
     }
 
-    public Float getLoanBalance() {
+    public Double getLoanBalance() {
         return loanBalance;
     }
 
-    public void setLoanBalance(Float loanBalance) {
+    public void setLoanBalance(Double loanBalance) {
         this.loanBalance = loanBalance;
     }
 
-    public Float getUsedAmount() {
+    public Double getUsedAmount() {
         return usedAmount;
     }
 
-    public void setUsedAmount(Float usedAmount) {
+    public void setUsedAmount(Double usedAmount) {
         this.usedAmount = usedAmount;
     }
 
@@ -181,6 +188,14 @@ public class Customers {
 
     public void setInstallmentPlan(String installmentPlan) {
         this.installmentPlan = installmentPlan;
+    }
+
+    public Double getCreditLimit() {
+        return creditLimit;
+    }
+
+    public void setCreditLimit(Double creditLimit) {
+        this.creditLimit = creditLimit;
     }
 
     @Override
