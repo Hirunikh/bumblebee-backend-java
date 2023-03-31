@@ -34,13 +34,13 @@ public class Loan {
             name = "LoanAmount",
             nullable = false
     )
-    private float loanAmount;
+    private double loanAmount;
 
     @Column(
             name = "InterestRate",
             nullable = false
     )
-    private  float interestRate;
+    private  double interestRate;
 
     @Column(
             name = "InstallmentPlan",
@@ -63,12 +63,20 @@ public class Loan {
     )
     private Integer customerID;
 
+    @Column(
+            name = "ProductID",
+            nullable = false,
+            columnDefinition = "Integer"
+    )
+    private Integer productID;
+
     public Loan (Integer LoanID,
-                Float LoanAmount,
-                Float InterestRate,
-                String InstallmentPlan,
+                Double LoanAmount,
+                Double InterestRate,
+                 String InstallmentPlan,
                 LocalDate PaymentDueDate,
-                 Integer customerID )
+                 Integer customerID,
+                 Integer ProductID)
     {
         this.loanID = LoanID;
         this.loanAmount = LoanAmount;
@@ -76,6 +84,7 @@ public class Loan {
         this.installmentPlan = InstallmentPlan;
         this.paymentDueDate = PaymentDueDate;
         this.customerID = customerID;
+        this.productID = ProductID;
 
     }
 
@@ -87,19 +96,19 @@ public class Loan {
         this.loanID = loanID;
     }
 
-    public float getLoanAmount() {
+    public double getLoanAmount() {
         return loanAmount;
     }
 
-    public void setLoanAmount(float loanAmount) {
+    public void setLoanAmount(double loanAmount) {
         this.loanAmount = loanAmount;
     }
 
-    public float getInterestRate() {
+    public double getInterestRate() {
         return interestRate;
     }
 
-    public void setInterestRate(float interestRate) {
+    public void setInterestRate(double interestRate) {
         this.interestRate = interestRate;
     }
 
@@ -127,6 +136,14 @@ public class Loan {
         this.customerID = customerID;
     }
 
+    public Integer getProductID() {
+        return productID;
+    }
+
+    public void setProductID(Integer productID) {
+        this.productID = productID;
+    }
+
     @Override
     public String toString() {
         return "Loan{" +
@@ -135,7 +152,8 @@ public class Loan {
                 ", interestRate=" + interestRate +
                 ", installmentPlan='" + installmentPlan + '\'' +
                 ", paymentDueDate=" + paymentDueDate +
-                "customerID=" + customerID +
+                ", customerID=" + customerID +
+                ", productID=" + productID +
                 '}';
     }
 }

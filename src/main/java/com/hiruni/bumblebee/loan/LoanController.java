@@ -5,6 +5,7 @@ import com.hiruni.bumblebee.customers.CustomersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -26,5 +27,23 @@ public class LoanController {
     @PostMapping
     public void CreateNewLoan(@RequestBody Loan loan) {
         loanService.addNewLoan(loan);
+    }
+
+    @DeleteMapping(path = "{LoanID}")
+    public void deleteLoan (
+            @PathVariable ("LoanID") Integer loanID){
+        loanService.deleteLoan(loanID);
+    }
+
+    @PutMapping(path = "{LoanID}")
+    public void updateCategory(
+            @PathVariable("LoanID") Integer loanID,
+            @RequestParam String installmentPlan,
+            @RequestParam (required = false) Double interestRate,
+            @RequestParam Double loanAmount,
+            //@RequestParam LocalDate paymentDueDate,
+            @RequestParam (required = false) Integer customerID,
+            @RequestParam (required = false) Integer productID){
+        loanService.updateLoan(loanID,installmentPlan,interestRate,loanAmount,customerID,productID);
     }
 }
