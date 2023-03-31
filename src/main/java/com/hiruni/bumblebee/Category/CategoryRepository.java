@@ -1,6 +1,6 @@
 package com.hiruni.bumblebee.Category;
 
-import com.hiruni.bumblebee.customers.Customers;
+import com.hiruni.bumblebee.Category.Category;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
