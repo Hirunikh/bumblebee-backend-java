@@ -26,4 +26,17 @@ public class BrandController {
     {
         brandService.addNewBrand(brand);
     }
+
+    @DeleteMapping(path = "{BrandID}")
+    public void deleteBrand (
+            @PathVariable ("BrandID") Integer brandID){
+        brandService.deleteBrand(brandID);
+    }
+
+    @PutMapping(path = "{BrandID}")
+    public void updateBrand(
+            @PathVariable("BrandID") Integer brandID,
+            @RequestParam String brandName){
+        brandService.updateBrand(brandID,brandName);
+    }
 }

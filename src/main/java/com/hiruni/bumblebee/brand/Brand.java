@@ -57,7 +57,7 @@ public class Brand {
         return brandName;
     }
 
-    public void setBrandName(String categoryName) {
+    public void setBrandName(String brandName) {
         this.brandName = brandName;
     }
 
@@ -65,7 +65,7 @@ public class Brand {
     public String toString() {
         return "Brand{" +
                 "BrandID=" + brandID +
-                ", brandName='" + brandName + '\'' +
+                ", BrandName='" + brandName + '\'' +
                 '}';
     }
 }
