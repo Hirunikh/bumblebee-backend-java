@@ -36,13 +36,6 @@ public class Payment {
     private Integer loanID;
 
     @Column(
-            name = "OrderID",
-            nullable = false,
-            columnDefinition = "Integer"
-    )
-    private Integer orderID;
-
-    @Column(
             name = "PaymentAmount",
             nullable = false
     )
@@ -65,7 +58,6 @@ public class Payment {
     public Payment (
             Integer PaymentID,
             Integer LoanID,
-            Integer OrderID,
             Float PaymentAmount,
             LocalDate PaymentDate,
             String PaymentStatus)
@@ -73,9 +65,8 @@ public class Payment {
     {
         this.paymentID = PaymentID;
         this.loanID = LoanID;
-        this.orderID = OrderID;
         this.paymentAmount = PaymentAmount;
-        paymentDate = PaymentDate;
+        this.paymentDate = PaymentDate;
         this.paymentStatus = PaymentStatus;
     }
 
@@ -93,14 +84,6 @@ public class Payment {
 
     public void setLoanID(Integer loanID) {
         this.loanID = loanID;
-    }
-
-    public Integer getOrderID() {
-        return orderID;
-    }
-
-    public void setOrderID(Integer orderID) {
-        orderID = orderID;
     }
 
     public Float getPaymentAmount() {
@@ -132,7 +115,6 @@ public class Payment {
         return "Payment{" +
                 "paymentID=" + paymentID +
                 ", loanID=" + loanID +
-                ", OrderID=" + orderID +
                 ", paymentAmount=" + paymentAmount +
                 ", paymentDate=" + paymentDate +
                 ", paymentStatus='" + paymentStatus + '\'' +

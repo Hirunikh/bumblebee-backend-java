@@ -1,6 +1,5 @@
 package com.hiruni.bumblebee.loyalty;
 
-import com.hiruni.bumblebee.customers.Customers;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

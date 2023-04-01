@@ -1,6 +1,5 @@
 package com.hiruni.bumblebee.order;
 
-import com.hiruni.bumblebee.customers.Customers;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

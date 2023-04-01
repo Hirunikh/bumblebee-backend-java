@@ -1,9 +1,6 @@
 package com.hiruni.bumblebee.product;
 
-import com.hiruni.bumblebee.category.Category;
 import com.hiruni.bumblebee.config.ApiError;
-import com.hiruni.bumblebee.customers.Customers;
-import com.hiruni.bumblebee.customers.CustomersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

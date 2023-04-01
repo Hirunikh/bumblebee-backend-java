@@ -1,7 +1,5 @@
 package com.hiruni.bumblebee.product;
 
-import com.hiruni.bumblebee.customers.Customers;
-import com.hiruni.bumblebee.customers.CustomersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

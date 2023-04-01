@@ -1,7 +1,5 @@
 package com.hiruni.bumblebee.loyalty;
 
-import com.hiruni.bumblebee.customers.Customers;
-import com.hiruni.bumblebee.customers.CustomersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
