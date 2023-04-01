@@ -1,8 +1,7 @@
 package com.hiruni.bumblebee.loan;
 
-import com.hiruni.bumblebee.customers.Customers;
-import com.hiruni.bumblebee.customers.CustomersService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -46,4 +45,11 @@ public class LoanController {
             @RequestParam (required = false) Integer productID){
         loanService.updateLoan(loanID,installmentPlan,interestRate,loanAmount,customerID,productID);
     }
+
+    @GetMapping("/report/due-within")
+    public LoanReportBetweenDays getLoansBetweenDays(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDate fromDate,
+                                                     @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDate toDate) {
+        return loanService.getLoansBetweenDays(fromDate, toDate);
+    }
+
 }

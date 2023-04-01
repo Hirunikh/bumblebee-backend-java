@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface CustomersRepository  extends CrudRepository<Customers, Integer> {
+public interface CustomersRepository  extends CrudRepository<Customer, Integer> {
 
-    Optional<Customers> findByCustomerID(Integer CustomerID);
+    Optional<Customer> findByCustomerID(Integer CustomerID);
 
-    Optional<Customers> findByEmail(String email);
+    Optional<Customer> findByEmail(String email);
 
-    List<Customers> findAll();
+    List<Customer> findAll();
 }

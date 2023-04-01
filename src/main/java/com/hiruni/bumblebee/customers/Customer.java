@@ -4,7 +4,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
@@ -17,7 +16,7 @@ import static javax.persistence.GenerationType.SEQUENCE;
                 @UniqueConstraint(name = "customers_Email_unique", columnNames = "Email")
         }
 )
-public class Customers {
+public class Customer {
 
     @Id
     @SequenceGenerator(
@@ -72,12 +71,6 @@ public class Customers {
     private String address;
 
     @Column(
-            name = "loanBalance",
-            nullable = false
-    )
-    private Double loanBalance;
-
-    @Column(
             name = "usedAmount",
             nullable = false
     )
@@ -96,15 +89,14 @@ public class Customers {
     )
     private String installmentPlan;
 
-    public Customers (Integer customerID,
-                     String customerName,
-                     LocalDate DOB,
-                     String contactNumber,
-                     String email,
-                     String address,
-                     Double loanBalance,
-                     Double usedAmount, Double creditLimit,
-                     String installmentPlan)
+    public Customer(Integer customerID,
+                    String customerName,
+                    LocalDate DOB,
+                    String contactNumber,
+                    String email,
+                    String address,
+                    Double usedAmount, Double creditLimit,
+                    String installmentPlan)
     {
         this.customerID = customerID;
         this.customerName = customerName;
@@ -112,7 +104,6 @@ public class Customers {
         this.contactNumber = contactNumber;
         this.email = email;
         this.address = address;
-        this.loanBalance = loanBalance;
         this.usedAmount = usedAmount;
         this.installmentPlan = installmentPlan;
         this.creditLimit = creditLimit;
@@ -166,14 +157,6 @@ public class Customers {
         this.address = address;
     }
 
-    public Double getLoanBalance() {
-        return loanBalance;
-    }
-
-    public void setLoanBalance(Double loanBalance) {
-        this.loanBalance = loanBalance;
-    }
-
     public Double getUsedAmount() {
         return usedAmount;
     }
@@ -207,7 +190,6 @@ public class Customers {
                 ", ContactNumber='" + contactNumber + '\'' +
                 ", Email='" + email + '\'' +
                 ", Address='" + address + '\'' +
-                ", LoanBalance=" + loanBalance +
                 ", UsedAmount=" + usedAmount +
                 ", InstallmentPlan='" + installmentPlan + '\'' +
                 '}';

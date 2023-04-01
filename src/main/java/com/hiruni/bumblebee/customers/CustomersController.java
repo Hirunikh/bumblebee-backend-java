@@ -1,6 +1,8 @@
 package com.hiruni.bumblebee.customers;
 
 import com.hiruni.bumblebee.config.ApiError;
+import com.hiruni.bumblebee.loan.CustomerLoan;
+import com.hiruni.bumblebee.loan.LoanReport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +21,7 @@ public class CustomersController {
     }
 
     @GetMapping
-    public List<Customers> getCustomers() {
+    public List<Customer> getCustomers() {
         return customersService.getCustomers();
     }
 
@@ -29,7 +31,12 @@ public class CustomersController {
     }
 
     @PostMapping
-    public void CreateNewCustomer(@RequestBody Customers customers) {
-        customersService.addNewCustomer(customers);
+    public void CreateNewCustomer(@RequestBody Customer customer) {
+        customersService.addNewCustomer(customer);
+    }
+
+    @GetMapping("/{id}/existing-loans")
+    public List<CustomerLoan> getLoansForCustomer(@PathVariable Integer id) {
+        return customersService.getLoansForCustomer(id);
     }
 }
