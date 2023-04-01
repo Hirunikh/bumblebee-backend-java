@@ -26,4 +26,19 @@ public class InventoryController {
         inventoryService.addNewInventory(inventory);
     }
 
+    @DeleteMapping(path = "{InventoryID}")
+    public void deleteInventory(
+            @PathVariable ("InventoryID") Integer inventoryID){
+        inventoryService.deleteInventory(inventoryID);
+    }
+
+    @PutMapping(path = "{InventoryID}")
+    public void updateInventory(
+            @PathVariable("InventoryID") Integer inventoryID,
+            @RequestParam Integer productID,
+            @RequestParam Integer stockQuantity,
+            @RequestParam String stockLocation){
+        inventoryService.updateInventory(inventoryID,productID,stockQuantity,stockLocation);
+    }
+
 }
