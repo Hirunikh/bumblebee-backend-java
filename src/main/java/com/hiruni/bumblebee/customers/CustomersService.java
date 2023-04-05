@@ -8,8 +8,10 @@ import com.hiruni.bumblebee.product.Product;
 import com.hiruni.bumblebee.product.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.security.SecureRandom;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -25,6 +27,8 @@ public class CustomersService {
     private final ProductRepository productRepository;
 
     private final PaymentRepository paymentRepository;
+
+    private final BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(10, new SecureRandom());
 
     @Autowired
     public CustomersService(CustomersRepository customersRepository, LoanRepository loanRepository,
@@ -51,6 +55,10 @@ public class CustomersService {
        // newCustomer.setLoanBalance(0.0);
         newCustomer.setUsedAmount(0.0);
         newCustomer.setCreditLimit(15000.0);
+        newCustomer.setInstallmentPlan("3 months");
+
+        String encodedPassword = bCryptPasswordEncoder.encode(newCustomer.getPassword());
+        newCustomer.setPassword(encodedPassword);
 
         customersRepository.save(newCustomer);
     }

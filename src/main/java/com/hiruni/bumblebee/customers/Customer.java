@@ -64,6 +64,13 @@ public class Customer {
     private String email;
 
     @Column(
+            name = "password",
+            nullable = false,
+            columnDefinition = "TEXT"
+    )
+    private String password;
+
+    @Column(
             name = "address",
             nullable = false,
             columnDefinition = "TEXT"
@@ -94,6 +101,7 @@ public class Customer {
                     LocalDate DOB,
                     String contactNumber,
                     String email,
+                    String password,
                     String address,
                     Double usedAmount, Double creditLimit,
                     String installmentPlan)
@@ -107,6 +115,7 @@ public class Customer {
         this.usedAmount = usedAmount;
         this.installmentPlan = installmentPlan;
         this.creditLimit = creditLimit;
+        this.password = password;
     }
 
     public Integer getCustomerID() {
@@ -143,6 +152,14 @@ public class Customer {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setEmail(String email) {
