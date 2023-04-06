@@ -34,7 +34,7 @@ public class ProductController {
     @PutMapping(path = "{ProductID}")
     public void updateProduct(
             @PathVariable("ProductID") Integer productID,
-            @RequestParam String productName){
-        productService.updateProduct(productID,productName);
+            @RequestBody Product product){
+        productService.updateProduct(productID,product);
     }
 }

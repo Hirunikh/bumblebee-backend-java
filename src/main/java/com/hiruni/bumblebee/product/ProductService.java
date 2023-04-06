@@ -4,6 +4,7 @@ import com.hiruni.bumblebee.config.ApiError;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -33,12 +34,11 @@ public class ProductService {
         productRepository.deleteById(productID);
     }
 
-    public void updateProduct(Integer productID, String newProductName) {
+    @Transactional
+    public void updateProduct(Integer productID, Product newProduct) {
         Product product = productRepository.findByProductID(productID)
-                .orElseThrow( () -> new ApiError("This Category does not exist.", HttpStatus.BAD_REQUEST));
-        if (newProductName != null && newProductName.length() > 0 && !newProductName.equals(product.getProductName())){
-            product.setProductName(newProductName);
-            productRepository.save(product);
-        }
+                .orElseThrow( () -> new ApiError("This Product does not exist.", HttpStatus.BAD_REQUEST));
+        newProduct.setProductID(productID);
+        productRepository.save(newProduct);
     }
 }
