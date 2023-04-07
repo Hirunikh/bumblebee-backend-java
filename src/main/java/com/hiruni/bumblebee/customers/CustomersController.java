@@ -2,7 +2,6 @@ package com.hiruni.bumblebee.customers;
 
 import com.hiruni.bumblebee.config.ApiError;
 import com.hiruni.bumblebee.loan.CustomerLoan;
-import com.hiruni.bumblebee.loan.LoanReport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
